@@ -45,7 +45,7 @@ createApp({
             }
         },
         clickThumb(index) {
-            this.slides[activeCount].image = index;
+            this.activeCount = index;
         }
     },
 }).mount('#app')
