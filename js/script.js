@@ -27,6 +27,7 @@ createApp({
                 }
             ],
             activeCount: 0,
+            autoPlayValue: false,
         };
     },
     methods: {
@@ -46,6 +47,24 @@ createApp({
         },
         clickThumb(index) {
             this.activeCount = index;
-        }
+        },
+        autoPlay() {
+            if (this.autoPlayValue==false) {
+                this.autoPlay = setInterval(() => {
+                    this.goNext();
+                }, 3000);
+            }
+        },
+        stopPlay() {
+            if (this.autoPlayValue==true){
+                clearInterval(this.autoPlayValue)
+                this.autoPlayValue = false;
+            }
+        },
     },
+
+    created() {
+        this.autoPlay();
+        this.stopPlay();
+    }
 }).mount('#app')
