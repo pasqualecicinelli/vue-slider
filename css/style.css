@@ -16,6 +16,8 @@
     width: 700px;
     height: 400px;
     position: relative;
+    cursor: pointer;
+
 }
 
 .item img {
@@ -37,6 +39,7 @@
     height: 400px;
     background: #000;
     position: relative;
+    cursor: pointer;
 }
 
 .thumb {
@@ -51,11 +54,12 @@
 }
 
 .thumb.active {
-    border: 2px solid #ccc;
+    border: 5px solid #ccc;
     opacity: 1;
 }
 
-.prev, .next {
+.prev,
+.next {
     width: 20px;
     height: 20px;
     margin: 10px 0;
