@@ -37,6 +37,7 @@ createApp({
             } else {
                 this.activeCount = 0;
             }
+
         },
         goPrev() {
             if (this.activeCount > 0) {
@@ -44,21 +45,22 @@ createApp({
             } else {
                 this.activeCount = this.slides.length - 1;
             }
+
         },
         clickThumb(index) {
             this.activeCount = index;
         },
         autoPlay() {
-            if (this.autoPlayValue == false) {
-                this.autoPlay = setInterval(() => {
+            if (!this.autoPlayValue) {
+                this.autoPlayValue = setInterval(() => {
                     this.goNext();
                 }, 3000);
             }
         },
         stopPlay() {
-            if (this.autoPlayValue == true) {
+            if (this.autoPlayValue) {
                 clearInterval(this.autoPlayValue);
-                this.autoPlayValue == false;
+                this.autoPlayValue = false;
             }
         },
     },
